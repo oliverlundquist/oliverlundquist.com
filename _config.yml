@@ -1,11 +1,13 @@
 title: Oliver Lundquist
 email: mail@oliverlundquist.com
-description: "I blog about tech, travel and freelancing."
+# description: "I blog about tech, travel and freelancing."
 baseurl: ""
 url: "https://oliverlundquist.com"
 twitter_username: lundquistoliver
 github_username:  oliverlundquist
 google_analytics: UA-106187968-1
+disqus:
+  shortname: oliverlundquist
 
 # Build settings
 markdown: kramdown
