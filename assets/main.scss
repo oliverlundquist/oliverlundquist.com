@@ -1,0 +1,23 @@
+---
+---
+
+// minima
+$base-font-size: 18px;
+$base-line-height: 2.0;
+$text-color: #525252;
+@import "minima";
+
+p {
+  margin-bottom: $spacing-unit * 0.75;
+}
+
+// custom styles
+.tldr {
+	font-size: 13px;
+	color: #aaa;
+	line-height: 1.6;
+}
+
+pre, code {
+	background-color: #f7f7f7;
+}
