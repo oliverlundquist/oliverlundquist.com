@@ -3,12 +3,15 @@
 
 // minima
 $base-font-size: 18px;
-$base-line-height: 2.0;
 $text-color: #525252;
 @import "minima";
 
+h1, p {
+	line-height: $base-line-height * 1.33;
+}
+
 p {
-  margin-bottom: $spacing-unit * 0.75;
+	margin-bottom: $spacing-unit * 0.75;
 }
 
 // custom styles
@@ -20,4 +23,5 @@ p {
 
 pre, code {
 	background-color: #f7f7f7;
+	font-size: 14px;
 }
