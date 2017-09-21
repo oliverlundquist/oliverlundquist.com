@@ -1,9 +1,10 @@
 ---
-layout: post
-title:  "Karma with Chrome Headless is not working in CI environment."
-date:   2017-09-19 20:10:00 +0200
-tags:   [karma, chrome, headless, ci, circleci, selenium, docker, laravel, vue]
-introduction: "I stumbled upon a weird error in CircleCI 2.0 where I couldn't get Google Chrome to work in headless mode when running my VueJS tests in my Laravel app. After a couple of hours of trial and error I finally figured it out, I hope this will save some time for someone out there trying to achieve the same thing."
+layout:           post
+title:            "Karma with Chrome Headless is not working in CI environment."
+date:             2017-09-19 20:10:00 +0200
+last_modified_at: 2017-09-21 18:58:00 +0200
+tags:             [karma, chrome, headless, ci, circleci, selenium, docker, laravel, vue]
+introduction:     "I stumbled upon a weird error in CircleCI 2.0 where I couldn't get Google Chrome to work in headless mode when running my VueJS tests in my Laravel app. After a couple of hours of trial and error I finally figured it out, I hope this will save some time for someone out there trying to achieve the same thing."
 ---
 
 So I bumped into this error when testing my VueJS tests in my Laravel application in CircleCI 2.0 with the selenium/standalone-chrome:latest docker image.
@@ -50,7 +51,7 @@ jobs:
       - checkout
       - run: |
           head -n -6 /opt/google/chrome/google-chrome | sudo tee /opt/google/chrome/google-chrome-updated
-          echo '/opt/google/chrome/chrome --no-sandbox "$@"' | sudo tee -a /opt/google/chrome/google-chrome-updated
+          echo 'exec -a "$0" /opt/google/chrome/chrome --no-sandbox "$@"' | sudo tee -a /opt/google/chrome/google-chrome-updated
           sudo mv /opt/google/chrome/google-chrome-updated /opt/google/chrome/google-chrome
           sudo chmod 775 /opt/google/chrome/google-chrome
           ls -lah /usr/bin/google-chrome && ls -lah /etc/alternatives/google-chrome && ls -lah /usr/bin/google-chrome-stable && ls -lah /opt/google/chrome/google-chrome
