@@ -21,23 +21,16 @@
       </div>
 
       <div class="footer-col footer-col-3">
+        <span>{% include newsletter.html %}</span>
         <p>{{ site.description | escape }}</p>
-        <p>{% include newsletter.html %}</p>
       </div>
 
       <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
+        <ul>
+            <li><a href="https://www.facebook.com/oliver.lundquist.56">Facebook</a></li>
+            <li><a href="https://twitter.com/olibalundo">Twitter</a></li>
+            <li><a href="https://www.instagram.com/olibalundo/">Instagram</a></li>
+            <li><a href="https://github.com/oliverlundquist">GitHub</a></li>
         </ul>
       </div>
 

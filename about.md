@@ -1,18 +1,15 @@
 ---
 layout: page
-title: About
+title: Who are you?
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm Oliver Lundquist, a Swedish Freelancing Web Developer based in Matsumoto City, Japan.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I wake up every morning excited about writing code, traveling, making Indian and Chinese food, playing the guitar, watching Netflix & Hulu.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Check me out on my social accounts:
+- [Facebook](https://www.facebook.com/oliver.lundquist.56)
+- [Twitter](https://twitter.com/olibalundo)
+- [Instagram](https://www.instagram.com/olibalundo/)
+- [GitHub](https://github.com/oliverlundquist)
