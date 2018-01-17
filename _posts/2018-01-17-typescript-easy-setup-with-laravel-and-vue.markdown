@@ -2,16 +2,16 @@
 layout:           post
 title:            "Typescript easy setup with Laravel and Vue."
 date:             2018-01-17 15:57:00 +0700
-last_modified_at: 2018-01-17 15:57:00 +0700
+last_modified_at: 2018-01-17 17:01:00 +0700
 tags:             [laravel, typescript, vue, easy, setup, vue-loader, ts-loader]
 introduction:     "Setup Typescript with Laravel and Vue in a matter of minutes. After doing a lot of research on how to setup Typescript with Laravel and Vue I found what I believe is the simplest solution to get it up and running in no time."
 ---
 
 These last couple of weeks, I have been working on a Laravel project with a lot of dynamic interfaces that are heavily dependent on Vue. As the project started to get bigger and I was passing around many of the same data objects in different modules I felt that I wanted to secure myself from not accessing wrong properties or passing wrong arguments to functions that I might have written weeks ago.
 
-For smaller projects I feel that Typescript can be a bit overkill when you just want something up and running fast, however I do definitely see its use cases once the project gets bigger, as I did now with this project. After doing a lot of research and watching tutorials on how to get Laravel and Vue up and running with Typescript support, I felt that the setup process was very complicated and many of the tutorials didn't use the Vue class component, which I feel is where the real power of Typescript kicks in.
+For smaller projects I feel that Typescript can be a bit overkill when you just want something up and running fast, however I do definitely see its use cases once the project gets bigger, as I did with this project. After doing a lot of research and watching tutorials on how to get Laravel and Vue up and running with Typescript support, I felt that the setup process was very complicated and many of the tutorials didn't use the Vue class component, which I feel is where the real power of Typescript kicks in.
 
-So, I decided to put together a guide that is as few steps and as few third-party dependencies as possible. This is the result of me banging my head against the wall for a day in frustration trying different setup methods which most of them didn't work at all. Follow the steps below if you want to avoid this kind of headache and stress while setting up Typescript with Vue in Laravel. :)
+So, I decided to put together a guide that has as few steps as possible and that uses as few third-party dependencies as possible. This is the result of me banging my head against the wall for a day in frustration trying different setup methods which most of them failed miserably. Follow the steps below if you want to avoid this kind of a headache and stress while setting up Typescript with Vue in Laravel. :)
 
 First, start off by creating a new Laravel project.
 {% highlight plaintext %}
@@ -52,12 +52,12 @@ export default class ExampleComponent extends Vue {
 }
 {% endhighlight %}
 
-Add necessary NPM dependencies, this setup will use the vue-loader that comes with Laravel Mix which will use the ts-loader and Typescript to compile it down to JavaScript. The vue-class-component is there for class support with Typescript in Vue components.
+Add the necessary NPM dependencies, this setup will use the vue-loader that comes with Laravel Mix which will use the ts-loader and Typescript to compile TypeScript down to JavaScript. The vue-class-component is there for class support with Typescript in Vue components.
 {% highlight plaintext %}
 npm install vue-class-component ts-loader typescript --save-dev
 {% endhighlight %}
 
-Install the rest of the dependencies that comes with Laravel out of the box.
+Install the rest of the NPM dependencies that comes with Laravel.
 {% highlight plaintext %}
 npm install
 {% endhighlight %}
@@ -90,7 +90,7 @@ Lastly, generate a new JS bundle file by running the following NPM command
 npm run dev
 {% endhighlight %}
 
-Now if you run php artisan serve to spin up a development server and open http://127.0.0.1:8000 in your browser and check-out the console you should see the message 'Component mounted.'
+Now if you run php artisan serve to spin up a development server, open http://127.0.0.1:8000 in your browser and check-out the console you should see the message 'Component mounted.'
 
 Congratulations, you now have Typescript support with Vue in your Laravel project!
 
