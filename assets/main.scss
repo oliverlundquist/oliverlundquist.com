@@ -15,6 +15,15 @@ p {
 }
 
 // custom styles
+body {
+	background-color: #fff;
+}
+
+.site-header {
+	border-top: none;
+	border-bottom: 5px solid #e8e8e8;
+}
+
 .tldr {
 	font-size: 13px;
 	color: #aaa;
@@ -22,6 +31,7 @@ p {
 }
 
 pre, code {
-	background-color: #f7f7f7;
+	background-color: #fff;
 	font-size: 14px;
+	border: 5px solid #e8e8e8;
 }
