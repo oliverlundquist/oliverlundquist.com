@@ -17,20 +17,20 @@ The dataset that I was working with has a lot of created_at timestamps with the 
 
 The following four queries were the ones that I executed to paginate the total 190 entries into four pages. Sure enough, the IDs `21990` and `21991` appeared on both page number 2 and 3.
 
-{% highlight plaintext %}
+{% highlight sql %}
 select id,created_at from `products` where `status` <> 0 `created_at` desc limit 50 offset 0
 select id,created_at from `products` where `status` <> 0 `created_at` desc limit 50 offset 50
 select id,created_at from `products` where `status` <> 0 `created_at` desc limit 50 offset 100
 select id,created_at from `products` where `status` <> 0 `created_at` desc limit 50 offset 150
 {% endhighlight %}
 
-I'm pretty sure this will not happen if you do not have many entries with the same value. This might be an optimization they have implemented in the MySQL engine on purpose so that the database does not scan all entries before getting the offset in the dataset. Instead, in this case it seems to start fetching entries when it has found, in this case, 50 matching entries.
+I'm pretty sure this will not happen if you do not have many entries with the same value. That's because if you are sorting on one column with many duplicates the order of them is not guaranteed if you are not specifying a secondary sorting column. So, in this case, the duplicate data was because of this specific dataset. That said, it is good practice to always sort by a second column as well, especially when working with pagination that is sorted on a column with many duplicates.
 
-Let me know if I got this completely wrong.
+I sure learned my lesson and I hope that this was helpful for anyone out there in a similar situation.
 
 I'll finish the article by dropping the whole dataset here, have a good one!
 
-{% highlight plaintext %}
+{% highlight sql %}
 select id,created_at from `products` where `status` <> 0 order by `created_at` desc
 21914   2018-03-02 13:08:42
 22077   2018-03-02 12:20:45
