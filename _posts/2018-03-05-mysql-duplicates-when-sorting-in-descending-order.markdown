@@ -11,9 +11,9 @@ So I got a mail from a client this morning saying that there was an error in the
 
 This application is built with the Laravel based framework Lumen so I figured that it had to have something to do with the logic in the Laravel ORM, Eloquent. I thought that it might have been some bug that got fixed in more recent versions of the framework so I started googling for similar cases. I couldn't find any information on similar issues so I figured that I would just extract the raw queries from the ORM and run them directly in MySQL so I fired up Sequel Pro and started querying the database.
 
-I'm running MySQL 5.7.21 in Docker and haven't tested other MySQL versions so I'm not sure if this is specific to this version. However, once I ran the queries in the database I found out that the problem was not in the Eloquent ORM but in MySQL itself. I was relieved that it was not the application but at the same time perplexed by not knowing how to fix this issue since I do not know the internals in MySQL.
+I'm running MySQL 5.7.21 in Docker and haven't tested other MySQL versions so I'm not sure if this is specific to this version. However, once I ran the queries in the database I found out that the problem was not in the Eloquent ORM but in MySQL itself. I was relieved that it was not the application but at the same time perplexed by not knowing how to fix this issue since I do not know the internals of MySQL.
 
-The dataset that I was working with has a lot of created_at timestamps with the exact same date. MySQL returns the correct results when you are not using offset and limit to paginate the result. The same goes for when you're sorting your data in ascending order or leaving out the order by clause in your query. The problem with this dataset occurred when using offset and limit to paginate the result set and at the same time sort it by created_at timestamp in descending order.
+The dataset that I was working with has a lot of created_at timestamps with the exact same date. MySQL returned the correct results when I was not using offset and limit to paginate the result. The same went for when I was sorting the data in ascending order and also when leaving out the order by clause in the query. The problem occurred when using offset and limit to paginate the result set and at the same time sorting it by created_at timestamp in descending order.
 
 The following four queries were the ones that I executed to paginate the total 190 entries into four pages. Sure enough, the IDs `21990` and `21991` appeared on both page number 2 and 3.
 
@@ -24,11 +24,11 @@ select id,created_at from `products` where `status` <> 0 `created_at` desc limit
 select id,created_at from `products` where `status` <> 0 `created_at` desc limit 50 offset 150
 {% endhighlight %}
 
-I'm pretty sure this will not happen if you do not have many entries with the same value and I'm guessing that how they optimized the MySQL engine so that it does not scan all entries before getting the offset in the dataset. Instead, it seems to start fetching entries when it has found, in this case, 50 matching entries.
+I'm pretty sure this will not happen if you do not have many entries with the same value. This might be an optimization they have implemented in the MySQL engine on purpose so that the database does not scan all entries before getting the offset in the dataset. Instead, in this case it seems to start fetching entries when it has found, in this case, 50 matching entries.
 
 Let me know if I got this completely wrong.
 
-I'll just finish the article by dropping the whole dataset here, have a good one!
+I'll finish the article by dropping the whole dataset here, have a good one!
 
 {% highlight plaintext %}
 select id,created_at from `products` where `status` <> 0 order by `created_at` desc
