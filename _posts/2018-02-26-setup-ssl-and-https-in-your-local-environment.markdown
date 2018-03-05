@@ -2,7 +2,7 @@
 layout:           post
 title:            "Create a wildcard SSL certificate for your local development environment."
 date:             2018-02-26 19:55:00 +0900
-last_modified_at: 2018-02-26 19:55:00 +0900
+last_modified_at: 2018-02-26 20:35:00 +0900
 tags:             [ssl, https, local, development, environment, keychain, openssl, san, google, chrome, virtualbox, vm, docker]
 introduction:     "Google Chrome 63 is now forcing HTTPS and SSL for .dev top-level domains, so it's time to setup support for HTTPS in your local development environment and here are some instructions to get you going quickly."
 ---
