@@ -252,4 +252,4 @@ That's all for this time, I hope that this was an interesting read and that it g
 Until next time, have a good one!
 
 For a complete diff of the files that were added in this blog post, check out the link below:
-- [https://github.com/oliverlundquist/laravel-recommender-system/commit/ed525e911ce1240f9bda6cb3c845fe494cc5e243](https://github.com/oliverlundquist/laravel-recommender-system/commit/ed525e911ce1240f9bda6cb3c845fe494cc5e243).
+- [[GitHub Diff]](https://github.com/oliverlundquist/laravel-recommender-system/commit/ed525e911ce1240f9bda6cb3c845fe494cc5e243)

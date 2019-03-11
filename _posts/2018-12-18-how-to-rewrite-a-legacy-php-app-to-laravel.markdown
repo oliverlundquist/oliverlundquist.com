@@ -542,4 +542,4 @@ I hope that this was an interesting read and that it gave you some new ideas on 
 Until next time, have a good one!
 
 For a complete diff of the files that were tweaked, checkout the link below:
-- [https://github.com/oliverlundquist/rewrite-legacy-app-in-laravel/pull/1/files](https://github.com/oliverlundquist/rewrite-legacy-app-in-laravel/pull/1/files).
+- [[GitHub Diff]](https://github.com/oliverlundquist/rewrite-legacy-app-in-laravel/pull/1/files)
