@@ -241,12 +241,6 @@ In the above example, we calculate the product features, product price and produ
 
 As you might have noticed, there are properties for weight in the `ProductSimilarity.php` class used in the example above. If you adjust the values you can adjust the similarity calculations by, for example, putting a higher weight on product price to make that of greater importance when you compare products.
 
-I have noticed that the Jaccard index, that I use in this article to calculate categories similarity might not be the best algorithm to use for this kind of calculations. That is because it makes it difficult to add weight to specific categories.
-
-If you, for example, have: `men, the-north-face, winter-jacket` as your categories, the category `men` will have the same weight as the brand `the-north-face` and `winter-jacket` which would make women's jacket count as similar if it's a The North Face winter jacket. This is probably not the result you would be hoping for if you're a man looking for a jacket in an ecom store.
-
-In this case, it will make more sense to use an algorithm where you can add weight to certain categories, so that you when you click on a men's jacket, you will actually get other recommendations for men's jackets. One example of this would be [tf–idf (frequency–inverse document frequency)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf){:target="_blank"}.
-
 That's all for this time, I hope that this was an interesting read and that it gave you some inspiration to dig deeper into this topic. I would love to hear your thoughts and comments, feel free to post anything in the comment box down below.
 
 Until next time, have a good one!
